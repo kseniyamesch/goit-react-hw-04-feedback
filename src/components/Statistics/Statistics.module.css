@@ -1,0 +1,21 @@
+ul {
+  list-style: none;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+}
+
+.item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.text {
+  font-weight: 600;
+}
+
+.number {
+  margin-left: 10px;
+  color: brown;
+}
