@@ -10,6 +10,7 @@ export function App() {
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
 
+  const feedback = { good, neutral, bad };
   const onBtnClick = evt => {
     const { name } = evt.currentTarget;
     switch (name) {
@@ -32,7 +33,6 @@ export function App() {
   };
 
   const countPositiveFeedbackPercentage = () => {
-    // const { good, neutral, bad } = this.state;
     return Math.round((good / (good + neutral + bad)) * 100);
   };
 
@@ -40,7 +40,7 @@ export function App() {
     <div>
       <Section title="Please leave feedback">
         <FeedbackOptions
-          options={['good', 'neutral', 'bad']}
+          options={Object.keys(feedback)}
           onLeaveFeedback={onBtnClick}
         ></FeedbackOptions>
       </Section>
